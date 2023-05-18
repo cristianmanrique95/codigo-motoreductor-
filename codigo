@@ -1,0 +1,36 @@
+// Definimos los pines que se utilizarán
+  
+int in1 = 8;   // Input 1 del motor A
+int in2 = 7;   // Input 2 del motor A
+
+void setup() {
+  // Configuramos los pines como salidas
+  
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+
+  // Inicializamos el motor en reposo
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  
+}
+
+void loop() {
+  // Hacemos girar el motor hacia un lado a velocidad máxima
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  
+  delay(1000);
+
+  // Hacemos girar el motor hacia el otro lado a velocidad media
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+ 
+  delay(1000);
+
+  // Detenemos el motor
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);
+  
+  delay(8000);
+}
